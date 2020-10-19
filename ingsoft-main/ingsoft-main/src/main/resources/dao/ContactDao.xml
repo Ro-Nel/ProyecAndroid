@@ -1,0 +1,34 @@
+<?xml version="1.0" encoding="UTF-8" ?>
+<!DOCTYPE mapper
+        PUBLIC "-//mybatis.org//DTD Mapper 3.0//EN"
+        "http://mybatis.org/dtd/mybatis-3-mapper.dtd">
+<mapper namespace="bo.ucb.edu.ingsoft.dao.ContactDao">
+    <select id="findByContactId" resultType="bo.ucb.edu.ingsoft.dto.Contact">
+        SELECT
+            contact_id as contactId,
+            first_name as firstName,
+            first_surname as firstSurname
+        FROM contact
+        WHERE
+            contact_id = 1
+    </select>
+
+    <select id="insertContact" resultType="bo.ucb.edu.ingsoft.dto.Contact">
+        INSERT INTO contact (first_name,first_surname)
+        VALUES ('Miguel', 'Cruz');
+    </select>
+
+    <select id="updateContact" resultType="bo.ucb.edu.ingsoft.dto.Contact">
+        UPDATE contact
+        SET second_name = 'Adrian', `second_surname` = 'Tancara'
+        WHERE contact_id = 3;
+
+    </select>
+
+    <select id="deleteContact" resultType="bo.ucb.edu.ingsoft.dto.Contact">
+        DELETE
+        FROM contact
+        WHERE
+              contact_id = 3
+    </select>
+</mapper>
